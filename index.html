@@ -13,11 +13,12 @@
 
     <div id="app">
         <div class="container flex">
+            <!-- parte sinistra chat -->
             <div class="sideBar">
                 <div class="users flex">
                     <div class="userImage flex">
                         <img src="./img/avatar_io.jpg" alt="">
-                        <span>Sofia</span>
+                        <p>Sofia</p>
                     </div>
                     <div class="usersOption">
                         <i class="fa-solid fa-circle-notch"></i>
@@ -33,10 +34,54 @@
                     </div>
                 </div>
                 <div class="searchChat">
-                    
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
+                <!-- contenitore delle chat -->
+                <div class="chatLeftContainer">
+                    <!-- ciclo per generare le 8 chat -->
+                    <div class="chat" v-for="chatUser in contacts">
+                        <div class="chatUser flex">
+                            <div class="chatInfoName flex">
+                                <img :src="chatUser.avatar" alt="michele">
+                                <div class="chatName">
+                                    <p>{{chatUser.name}}</p>
+                                    <span>Ultimo messaggio inviato</span>
+                                </div>
+                            </div>
+                            <div class="time">
+                                <span>12:00</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="leftbar"></div>
+            <div class="leftbar">
+                <div class="users flex">
+                    <div class="userImage flex">
+                        <img src="./img/avatar_1.jpg" alt="">
+                        <div class="chatName">
+                            <p>Michele</p>
+                            <span>Ultimo messaggio inviato oggi alle 12:00</span>
+                        </div>
+                    </div>
+                    <div class="usersOption">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+                <div class="chatRigtContainer flex">
+                    <div class="chatRigtContainerWrapper">
+                        <p>Hai portato a spasso il cane?</p>
+                    </div>
+                </div>
+                <div class="chatMessage flex">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <input type="text" placeholder="Scivi messaggio">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+            </div>
         </div>
     </div>
     
