@@ -148,8 +148,8 @@ body, #app{
 
 .chatRigtContainerWrapper{
     width: 80%;
-    background-color: red;
     height: 90%;
+    flex-direction: column;
 }
 
 .chatMessage{
@@ -172,3 +172,25 @@ body, #app{
     border: none;
     padding: 10px;
 }
+
+.flexEnd{
+    align-self: flex-end;
+    background-color: #d5f9ba;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px 10px 0 10px;
+    padding-left: 5px;
+    width: 250px;
+}
+
+.flexStart{
+    align-self: flex-start;
+    background-color: white;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px 10px 10px 0px;
+    padding-left: 5px;
+    width: 250px;
+
+}
+
