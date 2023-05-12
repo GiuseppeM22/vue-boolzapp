@@ -1,3 +1,4 @@
+/* classi generiche */
 *{
     box-sizing: border-box;
     padding: 0;
@@ -9,6 +10,7 @@
     display: flex;
 }
 
+/* inizio classi body */
 
 body, #app{
     height: 100vh;
@@ -22,19 +24,14 @@ body, #app{
 .container{
     width: 80%;
     height: 90%;
-    
 }
 
+/* barra laterale sinistra */
 .sideBar{
     width: 30%;
     background-color: white;
     height: 100%;
     overflow-y: scroll;
-}
-
-.leftbar{
-    width: 70%;
-    height: 100%;
 }
 
 .users{
@@ -133,9 +130,20 @@ body, #app{
     justify-content: space-between;
 }
 
+.chatUser:hover{
+    background-color: #8edafc;
+    cursor: pointer;
+}
+
 .time{
     color: gray;
     margin: 10px;
+}
+
+/* barra laterale destra */
+.rightbar{
+    width: 70%;
+    height: 100%;
 }
 
 .chatRigtContainer{
@@ -178,7 +186,7 @@ body, #app{
     background-color: #d5f9ba;
     margin: 10px;
     padding: 15px;
-    border-radius: 10px 10px 0 10px;
+    border-radius: 10px 0px 10px 10px;
     padding-left: 5px;
     width: 250px;
 }
@@ -188,9 +196,8 @@ body, #app{
     background-color: white;
     margin: 10px;
     padding: 15px;
-    border-radius: 10px 10px 10px 0px;
+    border-radius: 0px 10px 10px 10px;
     padding-left: 5px;
     width: 250px;
-
 }
 

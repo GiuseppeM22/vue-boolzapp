@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
+        currentChat: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -168,6 +169,14 @@ createApp({
         ]
         
         
+    }
+  },
+  methods: {
+    chatClick(i){
+        this.currentChat = i
+    },
+    messageStatus(messaggio){
+       return ( messaggio.status == 'sent') ? 'flexEnd' : 'flexStart'
     }
   }
 }).mount('#app')

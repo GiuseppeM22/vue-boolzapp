@@ -13,7 +13,7 @@
 
     <div id="app">
         <div class="container flex">
-            <!-- parte sinistra chat -->
+            <!-- inizio barra laterale sinistra -->
             <div class="sideBar">
                 <div class="users flex">
                     <div class="userImage flex">
@@ -40,7 +40,7 @@
                 <!-- contenitore delle chat -->
                 <div class="chatLeftContainer">
                     <!-- ciclo per generare le 8 chat -->
-                    <div class="chat" v-for="chatUser in contacts">
+                    <div @click="chatClick(i)" class="chat" v-for="(chatUser, i) in contacts">
                         <div class="chatUser flex">
                             <div class="chatInfoName flex">
                                 <img :src="chatUser.avatar" alt="michele">
@@ -56,12 +56,13 @@
                     </div>
                 </div>
             </div>
-            <div class="leftbar">
+            <!-- inizio barra laterale destra -->
+            <div class="rightbar">
                 <div class="users flex">
                     <div class="userImage flex">
-                        <img src="./img/avatar_1.jpg" alt="">
+                        <img :src="contacts[currentChat].avatar" alt="profilo utente">
                         <div class="chatName">
-                            <p>Michele</p>
+                            <p>{{contacts[currentChat].name}}</p>
                             <span>Ultimo messaggio inviato oggi alle 12:00</span>
                         </div>
                     </div>
@@ -72,10 +73,9 @@
                     </div>
                 </div>
                 <div class="chatRigtContainer flex">
+                    <!-- generiamo un messaggio per ogni messaggio presente nel'array -->
                     <div class="chatRigtContainerWrapper flex">
-                        <p class="flexEnd friends">Hai portato a spasso il cane?</p>
-                        <p class="flexEnd me">Ricordati di stendere i panni</p>
-                        <p class="flexStart">Tutto fatto!</p>
+                        <p v-for="messaggio in contacts[currentChat].messages" :class="messageStatus(messaggio)">{{messaggio.message}}</p>
                     </div>
                 </div>
                 <div class="chatMessage flex">
