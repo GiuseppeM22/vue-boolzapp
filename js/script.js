@@ -5,6 +5,11 @@ createApp({
     return {
         currentChat: 0,
         bell: true,
+        nuovoMessaggio: {
+            data:'10/01/2020 15:30:5',
+            message : '',
+            status: 'send'
+        },
         contacts: [
             {
                 name: 'Michele',
@@ -184,7 +189,13 @@ createApp({
     },
     bellSlash(){
         this.bell = !this.bell 
+    },
+    aggiungiInChat(){
+        let messaggioInserito = {...this.nuovoMessaggio}
+        this.contacts.unshift(messaggioInserito)
+        this.nuovoMessaggio.message = ''
     }
+
   }
 }).mount('#app')
 
