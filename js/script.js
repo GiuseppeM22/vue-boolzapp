@@ -206,6 +206,9 @@ createApp({
             this.contacts[this.currentChat].messages.push(rispostaUtente)
             console.log(this.messaggioRisposta);
           }, "1000");
+    },
+    searchName(){
+
     }
 
   }
