@@ -27,10 +27,10 @@
                     </div>
                 </div>
                 <div class="silentMode flex">
-                    <i class="fa-solid fa-bell-slash"></i>
+                    <i @click="bellSlash()" :class="bells()"></i>
                     <div class="silentInfo">
                         <p>Ricevi notifiche di nuovi messaggi</p>
-                        <a href="#">Attiva notifiche desktop</a>
+                        <a @click="bellSlash()" href="#">Attiva notifiche desktop</a>
                     </div>
                 </div>
                 <div class="searchChat">

@@ -4,6 +4,7 @@ createApp({
   data() {
     return {
         currentChat: 0,
+        bell: true,
         contacts: [
             {
                 name: 'Michele',
@@ -177,6 +178,12 @@ createApp({
     },
     messageStatus(messaggio){
        return ( messaggio.status == 'sent') ? 'flexEnd' : 'flexStart'
+    },
+    bells(){
+        return (this.bell === true) ? 'fa-solid fa-bell' : 'fa-solid fa-bell-slash'
+    },
+    bellSlash(){
+        this.bell = !this.bell 
     }
   }
 }).mount('#app')
