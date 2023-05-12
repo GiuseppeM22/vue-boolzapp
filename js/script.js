@@ -5,10 +5,15 @@ createApp({
     return {
         currentChat: 0,
         bell: true,
+        messaggioRisposta: {
+            data:'10/01/2020 15:30:5',
+            message : 'OK!',
+            status: 'received'
+        },
         nuovoMessaggio: {
             data:'10/01/2020 15:30:5',
             message : '',
-            status: 'send'
+            status: 'sent'
         },
         contacts: [
             {
@@ -192,8 +197,15 @@ createApp({
     },
     aggiungiInChat(){
         let messaggioInserito = {...this.nuovoMessaggio}
-        this.contacts.unshift(messaggioInserito)
-        this.nuovoMessaggio.message = ''
+        this.contacts[this.currentChat].messages.push(messaggioInserito)
+        this.nuovoMessaggio.message = ""
+    },
+    messageAnswer(){
+        setTimeout(() => {
+            let rispostaUtente = {...this.messaggioRisposta}
+            this.contacts[this.currentChat].messages.push(rispostaUtente)
+            console.log(this.messaggioRisposta);
+          }, "1000");
     }
 
   }
