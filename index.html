@@ -34,8 +34,8 @@
                     </div>
                 </div>
                 <div class="searchChat">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input @click="searchName()" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <i @click="searchName()" class="fa-solid fa-magnifying-glass"></i>
+                    <input v-model="searchInput"  type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <!-- contenitore delle chat -->
                 <div class="chatLeftContainer">

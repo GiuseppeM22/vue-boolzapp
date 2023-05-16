@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
+        searchInput : "",
         currentChat: 0,
         bell: true,
         messaggioRisposta: {
@@ -208,9 +209,12 @@ createApp({
           }, "1000");
     },
     searchName(){
-
+        // funzione per cercare il nome dell'utente tramite input...provare con funzione split
+       for (let i = 0; i < this.contacts.length; i++) {
+        const contactsEle =  this.contacts[i];
+        console.log(contactsEle.name[0])
+       }
     }
 
   }
 }).mount('#app')
-
