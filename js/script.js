@@ -212,7 +212,16 @@ createApp({
         // funzione per cercare il nome dell'utente tramite input...provare con funzione split
        for (let i = 0; i < this.contacts.length; i++) {
         const contactsEle =  this.contacts[i];
-        console.log(contactsEle.name[0])
+        let nameSearched = contactsEle.name.toLowerCase()
+        //console.log(this.searchInput);
+        if(nameSearched.toLowerCase().includes(this.searchInput.toLowerCase())){
+            contactsEle.visible = true
+        }else{
+            contactsEle.visible = false
+        }
+
+      
+        //(nameSearched.toLowerCase() == this.searchInput.toLowerCase()) ? "visible: true" : "visible: false"
        }
     }
 

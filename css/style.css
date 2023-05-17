@@ -203,3 +203,11 @@ body, #app{
     width: 250px;
 }
 
+.none{
+    display: none;
+}
+
+.block{
+    display: block;
+}
+

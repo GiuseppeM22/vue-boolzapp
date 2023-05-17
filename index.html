@@ -34,13 +34,13 @@
                     </div>
                 </div>
                 <div class="searchChat">
-                    <i @click="searchName()" class="fa-solid fa-magnifying-glass"></i>
-                    <input v-model="searchInput"  type="text" placeholder="Cerca o inizia una nuova chat">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input v-model="searchInput" @keyup="searchName()" type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <!-- contenitore delle chat -->
                 <div class="chatLeftContainer">
                     <!-- ciclo per generare le 8 chat -->
-                    <div @click="chatClick(i)" class="chat" v-for="(chatUser, i) in contacts">
+                    <div @click="chatClick(i)" class="chat" v-for="(chatUser, i) in contacts" v-show="chatUser.visible">
                         <div class="chatUser flex">
                             <div class="chatInfoName flex">
                                 <img :src="chatUser.avatar" alt="michele">
