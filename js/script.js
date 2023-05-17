@@ -184,23 +184,28 @@ createApp({
     }
   },
   methods: {
+    // al click di ogni chat apre la corrispondente sulla destra
     chatClick(i){
         this.currentChat = i
     },
+    // in base allo status del messaggio imposta a destra o sinistra il messaggio
     messageStatus(messaggio){
        return ( messaggio.status == 'sent') ? 'flexEnd' : 'flexStart'
     },
+    // al click sulla campanella toglie lo slash o lo aggiunge
     bells(){
         return (this.bell === true) ? 'fa-solid fa-bell' : 'fa-solid fa-bell-slash'
     },
     bellSlash(){
         this.bell = !this.bell 
     },
+    // aggiunge il messaggio inviato in chat
     aggiungiInChat(){
         let messaggioInserito = {...this.nuovoMessaggio}
         this.contacts[this.currentChat].messages.push(messaggioInserito)
         this.nuovoMessaggio.message = ""
     },
+    // aggiunge un messaggio ricevuto in chat dopo un secondo dal messaggio inviato
     messageAnswer(){
         setTimeout(() => {
             let rispostaUtente = {...this.messaggioRisposta}
@@ -208,8 +213,8 @@ createApp({
             console.log(this.messaggioRisposta);
           }, "1000");
     },
+    // funzione per cercare il nome dell'utente tramite input
     searchName(){
-        // funzione per cercare il nome dell'utente tramite input...provare con funzione split
        for (let i = 0; i < this.contacts.length; i++) {
         const contactsEle =  this.contacts[i];
         let nameSearched = contactsEle.name.toLowerCase()
@@ -220,8 +225,6 @@ createApp({
             contactsEle.visible = false
         }
 
-      
-        //(nameSearched.toLowerCase() == this.searchInput.toLowerCase()) ? "visible: true" : "visible: false"
        }
     }
 
